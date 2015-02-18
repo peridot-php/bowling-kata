@@ -1,0 +1,17 @@
+{
+    "name": "peridot-php/bowling-kata",
+    "description": "The bowling kata in three different testing frameworks.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brian Scaturro",
+            "email": "scaturrob@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "peridot-php/peridot-jumpstart": "~1.2",
+        "phpunit/phpunit": "~4.5",
+        "phpspec/phpspec": "~2.1"
+    }
+}
