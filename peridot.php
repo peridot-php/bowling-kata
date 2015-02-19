@@ -7,6 +7,7 @@ use Peridot\Reporter\Dot\DotReporterPlugin;
 use Peridot\Reporter\ListReporter\ListReporterPlugin;
 use Peridot\Concurrency\ConcurrencyPlugin;
 use Symfony\Component\Console\Input\InputInterface;
+use Peridot\Console\Environment;
 
 return function(EventEmitterInterface $emitter) {
     $watcher = new WatcherPlugin($emitter);
@@ -25,5 +26,7 @@ return function(EventEmitterInterface $emitter) {
     $coverage = new CodeCoverageReporters($emitter);
     $coverage->register();
 
-    //$prophecy = new ProphecyPlugin($emitter);
+    $emitter->on('peridot.start', function (Environment $env) {
+        $env->getDefinition()->getArgument('path')->setDefault('specs');
+    });
 };
