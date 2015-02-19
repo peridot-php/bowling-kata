@@ -15,6 +15,7 @@ describe('Game', function () {
     describe('gutter game', function () {
         it('should result in a score of 0', function () {
             $this->rollMany(20, 0);
+
             expect($this->game->score())->to->equal(0);
         });
     });
@@ -22,6 +23,7 @@ describe('Game', function () {
     describe("when rolling all 1's", function () {
         it('should result in the sum of all frames', function () {
             $this->rollMany(20, 1);
+
             expect($this->game->score())->to->equal(20);
         });
     });
@@ -31,6 +33,7 @@ describe('Game', function () {
             $this->rollSpare();
             $this->game->roll(3);
             $this->rollMany(17, 0);
+
             expect($this->game->score())->to->equal(16);
         });
     });
@@ -41,6 +44,7 @@ describe('Game', function () {
             $this->game->roll(3);
             $this->game->roll(4);
             $this->rollMany(16, 0);
+
             expect($this->game->score())->to->equal(24);
         });
     });
@@ -48,6 +52,7 @@ describe('Game', function () {
     describe('when rolling a perfect game', function () {
         it('should result in a perfect score', function () {
             $this->rollMany(12, 10);
+            
             expect($this->game->score())->to->equal(300);
         });
     });
