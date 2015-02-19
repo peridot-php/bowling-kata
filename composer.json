@@ -13,5 +13,10 @@
         "peridot-php/peridot-jumpstart": "~1.2",
         "phpunit/phpunit": "~4.5",
         "phpspec/phpspec": "~2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Peridot\\BowlingKata\\": "src/"
+        }
     }
 }
