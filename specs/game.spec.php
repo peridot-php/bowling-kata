@@ -16,7 +16,7 @@ describe('Game', function () {
         it('should result in a score of 0', function () {
             $this->rollMany(20, 0);
 
-            expect($this->game->score())->to->equal(0);
+            assert($this->game->score() === 0);
         });
     });
 
@@ -24,7 +24,7 @@ describe('Game', function () {
         it('should result in the sum of all frames', function () {
             $this->rollMany(20, 1);
 
-            expect($this->game->score())->to->equal(20);
+            assert($this->game->score() === 20);
         });
     });
 
@@ -34,7 +34,7 @@ describe('Game', function () {
             $this->game->roll(3);
             $this->rollMany(17, 0);
 
-            expect($this->game->score())->to->equal(16);
+            assert($this->game->score() === 16);
         });
     });
 
@@ -45,7 +45,7 @@ describe('Game', function () {
             $this->game->roll(4);
             $this->rollMany(16, 0);
 
-            expect($this->game->score())->to->equal(24);
+            assert($this->game->score() === 24);
         });
     });
 
@@ -53,7 +53,7 @@ describe('Game', function () {
         it('should result in a perfect score', function () {
             $this->rollMany(12, 10);
             
-            expect($this->game->score())->to->equal(300);
+            assert($this->game->score() === 300);
         });
     });
 });
